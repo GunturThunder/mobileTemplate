@@ -1,0 +1,8 @@
+  const setVar = (key, value) => {
+    setStateVar(prevState => {
+      return {
+        ...prevState,
+        [key]: value,
+      };
+    });
+  };
