@@ -1,3 +1,7 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    // rest of your config
+    "lib": ["dom"] // Add this line
+  }
 }
