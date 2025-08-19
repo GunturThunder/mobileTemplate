@@ -1,12 +1,10 @@
 /* eslint-disable prettier/prettier */
 import { combineReducers } from 'redux';
-import Test from '../pages/Test';
-import Auth from './pages/auth/reducer';
-import AbsensiReducer from './pages/absensi/reducer';
+import Test from './pages/test/reducer';
+import ProductReducer from './pages/Product/reducer';
 const reducer = combineReducers({
   Test,
-  Auth,
-  AbsensiReducer
+  ProductReducer
   
 });
 

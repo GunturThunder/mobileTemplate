@@ -7,7 +7,6 @@
 
 import React from 'react';
 import type { PropsWithChildren } from 'react';
-import Icon from 'react-native-vector-icons/dist/Ionicons';
 import {
   SafeAreaView,
   ScrollView,
@@ -25,6 +24,8 @@ import Router from './src/router';
 import { NavigationContainer } from '@react-navigation/native';
 import FlashMessage from "react-native-flash-message";
 import { navigationRef } from './RootNavigation';
+import { Provider } from 'react-redux';
+import store from './src/store';
 
 
 function App(): React.JSX.Element {
@@ -32,16 +33,18 @@ function App(): React.JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    flex:1
+    flex: 1
   };
 
   return (
-    <NavigationContainer ref={navigationRef}>
-      <SafeAreaView style={backgroundStyle}>
-        <Router />
-        <FlashMessage position="top" />
-      </SafeAreaView>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer ref={navigationRef}>
+        <SafeAreaView style={backgroundStyle}>
+          <Router />
+          <FlashMessage position="top" />
+        </SafeAreaView>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
